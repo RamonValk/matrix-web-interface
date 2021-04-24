@@ -38,8 +38,8 @@ app.post("/", (req, res) => {
     case "bb8":
       execView("geek/bb8.gif");
       break;
-    default
-      console.dir('No such mediaType');
+    default:
+      console.dir("No such mediaType");
   }
 });
 app.listen(3000, () => console.log("Listening on port 3000"));
