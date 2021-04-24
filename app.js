@@ -1,13 +1,8 @@
-const http = require('http');
-
-const PORT = 3000;
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello dev.to!\n');
+const express = require("express");
+const app = express();
+app.set("view engine", "pug");
+app.set("views", "./src.views");
+app.get("/", (req, res) => {
+  res.render(index);
 });
-
-server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}.`);
-});
+app.listen(3000, () => console.log("Listening on port 3000"));
