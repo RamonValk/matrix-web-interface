@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title Exploring the Pug template
+        style
+            include index.css
+      
+    body
+        h1 Matrix controller
+        form(role="form" method="POST" action="/")
+            select(name="mediaType" onchange="this.form.submit()")
+                option(value="nyancat") Nyan Cat
+                option(value="aoe") Age of Empires
+                option(value="bb8") BB8
