@@ -22,7 +22,7 @@ app.post("/", (req, res) => {
     if (currentView) {
       currentView.kill();
     }
-    currentView = shell.exec(
+    currentView = shell.child_process.exec(
       `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`
     );
   };
