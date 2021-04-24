@@ -17,16 +17,18 @@ app.post("/", (req, res) => {
   console.dir(shell.pwd());
 
   let currentView;
+  let currentViewPID;
 
   const execView = (location) => {
-    console.dir(currentView);
-    if (currentView) {
-      currentView.kill();
+    console.dir(currentView, currentViewPID);
+    if (currentViewPID) {
+      shell.exec(`kill ${currentViewPID}`);
     }
     currentView = shell.exec(
       `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`,
       { async: true }
     );
+    currentViewPID = currentView.pid;
     console.dir(currentView);
   };
   switch (req.body.mediaType) {
