@@ -19,6 +19,7 @@ app.post("/", (req, res) => {
   let currentView;
 
   const execView = (location) => {
+    console.dir(currentView);
     if (currentView) {
       currentView.kill();
     }
