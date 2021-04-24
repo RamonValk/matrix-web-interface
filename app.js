@@ -15,11 +15,6 @@ app.post("/", (req, res) => {
   res.render("index", { title: "Home" });
   console.dir(req.body);
   console.dir(shell.pwd());
-  console.dir(
-    shell.exec(
-      "sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/aoe.gif --led-cols=64 --led-rows=64"
-    )
-  );
 
   const execView = (location) => {
     console.dir(
