@@ -16,11 +16,14 @@ app.post("/", (req, res) => {
   console.dir(req.body);
   console.dir(shell.pwd());
 
+  let currentView;
+
   const execView = (location) => {
-    console.dir(
-      shell.exec(
-        `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`
-      )
+    if (currentView) {
+      currentView.kill();
+    }
+    currentView = shell.exec(
+      `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`
     );
   };
   switch (req.body.mediaType) {
