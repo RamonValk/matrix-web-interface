@@ -15,6 +15,6 @@ app.post("/", (req, res) => {
   res.render("index", { title: "Home" });
   console.dir(req.body);
   shell.ls();
-  console.dir(shell.cd("../rpi-rgb-led-matrix"), shell.ls());
+  console.dir(shell.cd("./bash/utils/"), shell.ls());
 });
 app.listen(3000, () => console.log("Listening on port 3000"));
