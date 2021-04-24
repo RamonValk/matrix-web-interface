@@ -1,0 +1,24 @@
+{
+  "name": "matrix-web-interface",
+  "version": "1.0.0",
+  "description": "Simple bash nodejs app to control a led matrix",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamonValk/matrix-web-interface.git"
+  },
+  "author": "Ramon Valk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RamonValk/matrix-web-interface/issues"
+  },
+  "homepage": "https://github.com/RamonValk/matrix-web-interface#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodejs": "0.0.0",
+    "pug": "^3.0.2"
+  }
+}
