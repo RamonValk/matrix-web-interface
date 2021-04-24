@@ -18,7 +18,7 @@ app.post("/", (req, res) => {
   console.dir(shell.pwd());
   console.dir(
     shell.exec(
-      "sudo ./bash/utils/led-image-viewer testmedia/aoe.gif --led-cols=64 --led-rows=64"
+      "sudo ./bash/utils/led-image-viewer .bash/utils/testmedia/aoe.gif --led-cols=64 --led-rows=64"
     )
   );
 });
