@@ -20,7 +20,7 @@ const execView = (location) => {
     { async: true }
   );
   currentViewPID = currentView.pid;
-  console.log("CurrentViewPID after execute: ", currentViewPID);
+  console.log("CurrentViewPID after execute: ", currentView);
 };
 
 app.set("views", path.join(__dirname, "src/views"));
