@@ -8,7 +8,13 @@ html
     body
         h1 Matrix controller
         form(role="form" method="POST" action="/")
-            select(name="mediaType" show="1000" onchange="this.form.submit()")
-                option(value="nyancat") Nyan Cat
-                option(value="aoe") Age of Empires
-                option(value="bb8") BB8
+            div
+                span
+                    input(value="nyancat" id="nyancat" name="mediaType" onchange="this.form.submit()")
+                    label(for="nyancat") Nyan Cat
+                span
+                    input(value="aoe" id="aoe" name="mediaType" onchange="this.form.submit()")
+                    label(for="aoe") Age of Empires
+                span
+                    input(value="bb8" id="bb8" name="mediaType" onchange="this.form.submit()")
+                    label(for="bb8") BB8
