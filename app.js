@@ -1,8 +1,23 @@
 const express = require("express");
 const path = require("path");
 const shell = require("shelljs");
-
 const app = express();
+
+let currentView;
+let currentViewPID;
+
+const execView = (location) => {
+  console.dir(currentView, currentViewPID);
+  if (currentViewPID) {
+    shell.exec(`kill ${currentViewPID}`);
+  }
+  currentView = shell.exec(
+    `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`,
+    { async: true }
+  );
+  currentViewPID = currentView.pid;
+  console.dir(currentView);
+};
 
 app.set("views", path.join(__dirname, "src/views"));
 app.set("view engine", "pug");
@@ -16,21 +31,6 @@ app.post("/", (req, res) => {
   console.dir(req.body);
   console.dir(shell.pwd());
 
-  let currentView;
-  let currentViewPID;
-
-  const execView = (location) => {
-    console.dir(currentView, currentViewPID);
-    if (currentViewPID) {
-      shell.exec(`kill ${currentViewPID}`);
-    }
-    currentView = shell.exec(
-      `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`,
-      { async: true }
-    );
-    currentViewPID = currentView.pid;
-    console.dir(currentView);
-  };
   switch (req.body.mediaType) {
     case "aoe":
       execView("geek/aoe.gif");
