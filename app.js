@@ -32,7 +32,7 @@ const execView = (location) => {
     console.log("CurrentViewPID exists: ", currentViewPID);
     process.kill(-currentViewPID);
   }
-  currentView = child_process(
+  currentView = child_process.exec(
     `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`,
     { detached: true }
   );
