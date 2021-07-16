@@ -23,7 +23,7 @@ const execView = (location) => {
     { detached: true }
   );
   currentViewPID = currentView.pid;
-  console.log("CurrentViewPID after execute: ", currentView);
+  console.log("CurrentViewPID after execute: ", currentViewPID);
 };
 
 app.set("views", path.join(__dirname, "src/views"));
