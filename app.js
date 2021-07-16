@@ -13,8 +13,8 @@ const execView = (location) => {
     currentView.kill("SIGINT");
     // const execKill = shell.exec(`kill --SIGTERM -- -${currentViewPID}`);
     // const execKill = shell.exit(currentViewPID);
-    console.log("execKill output: ");
-    console.dir(execKill);
+    // console.log("execKill output: ");
+    // console.dir(execKill);
   }
   currentView = shell.exec(
     `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`,
