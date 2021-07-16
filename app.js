@@ -1,25 +1,39 @@
 const express = require("express");
 const path = require("path");
-const shell = require("shelljs");
+// const shell = require("shelljs");
+const child_process = require("child_process");
 const app = express();
 
 let currentView;
 let currentViewPID;
 
+// const execView = (location) => {
+//   console.log("CurrentViewPID before execute: ", currentViewPID);
+//   if (currentViewPID) {
+//     console.log("CurrentViewPID exists: ", currentViewPID);
+//     currentView.exec("pkill -P $$");
+//     // currentView.kill(9);
+//     // const execKill = shell.exec(`kill --SIGTERM -- -${currentViewPID}`);
+//     // const execKill = shell.exit(currentViewPID);
+//     // console.log("execKill output: ");
+//     // console.dir(execKill);
+//   }
+//   currentView = shell.exec(
+//     `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`,
+//     { async: true }
+//   );
+//   currentViewPID = currentView.pid;
+//   console.log("CurrentViewPID after execute: ", currentView);
+// };
+
 const execView = (location) => {
   console.log("CurrentViewPID before execute: ", currentViewPID);
   if (currentViewPID) {
     console.log("CurrentViewPID exists: ", currentViewPID);
-    currentView.exec("pkill -P $$");
-    // currentView.kill(9);
-    // const execKill = shell.exec(`kill --SIGTERM -- -${currentViewPID}`);
-    // const execKill = shell.exit(currentViewPID);
-    // console.log("execKill output: ");
-    // console.dir(execKill);
+    currentView.kill();
   }
-  currentView = shell.exec(
-    `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`,
-    { async: true }
+  currentView = child_process.exec(
+    `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`
   );
   currentViewPID = currentView.pid;
   console.log("CurrentViewPID after execute: ", currentView);
