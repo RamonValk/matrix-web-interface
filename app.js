@@ -16,7 +16,7 @@ const execView = (location) => {
     { async: true }
   );
   currentViewPID = currentView.pid;
-  console.dir(currentView);
+  console.log("CurrentViewPID: ", currentView);
 };
 
 app.set("views", path.join(__dirname, "src/views"));
@@ -29,7 +29,6 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
   res.render("index", { title: "Home" });
   console.dir(req.body);
-  console.dir(shell.pwd());
 
   switch (req.body.mediaType) {
     case "aoe":
