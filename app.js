@@ -19,6 +19,7 @@ const execView = (location) => {
       `./bash/utils/testmedia/${location}`,
       "--led-cols=64",
       "--led-rows=64",
+      "--led-show-refresh",
     ],
     { detached: true }
   );
