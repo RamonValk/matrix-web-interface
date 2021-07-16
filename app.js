@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 // const shell = require("shelljs");
-const spawn = require("child_process").spawn;
+const child_process = require("child_process");
 const app = express();
 
 let currentView;
@@ -32,7 +32,7 @@ const execView = (location) => {
     console.log("CurrentViewPID exists: ", currentViewPID);
     process.kill(-currentViewPID);
   }
-  currentView = spawn(
+  currentView = child_process(
     `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`,
     { detached: true }
   );
