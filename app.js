@@ -10,7 +10,7 @@ const execView = (location) => {
   console.log("CurrentViewPID before execute: ", currentViewPID);
   if (currentViewPID) {
     console.log("CurrentViewPID exists: ", currentViewPID);
-    const execKill = shell.exec(`kill ${currentViewPID}`);
+    const execKill = shell.exec(`kill -9 ${currentViewPID}`);
     console.log("execKill output: ", execKill);
   }
   currentView = shell.exec(
