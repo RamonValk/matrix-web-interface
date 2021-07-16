@@ -7,30 +7,9 @@ const app = express();
 let currentView;
 let currentViewPID;
 
-// const execView = (location) => {
-//   console.log("CurrentViewPID before execute: ", currentViewPID);
-//   if (currentViewPID) {
-//     console.log("CurrentViewPID exists: ", currentViewPID);
-//     process.kill(-currentViewPID);
-//     // currentView.exec("pkill -P $$");
-//     // currentView.kill(9);
-//     // const execKill = shell.exec(`kill --SIGTERM -- -${currentViewPID}`);
-//     // const execKill = shell.exit(currentViewPID);
-//     // console.log("execKill output: ");
-//     // console.dir(execKill);
-//   }
-//   currentView = shell.exec(
-//     `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`,
-//     { async: true }
-//   );
-//   currentViewPID = currentView.pid;
-//   console.log("CurrentViewPID after execute: ", currentView);
-// };
-
 const execView = (location) => {
-  console.log("CurrentViewPID before execute: ", currentViewPID);
   if (currentViewPID) {
-    console.log("CurrentViewPID exists: ", currentViewPID);
+    console.log(`CurrentViewPID exists: ${currentViewPID}\nRemoving...`);
     process.kill(-currentViewPID);
   }
   currentView = child_process.spawn(
