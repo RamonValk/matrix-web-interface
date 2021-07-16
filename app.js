@@ -34,7 +34,10 @@ const execView = (location) => {
     process.kill(-currentViewPID);
   }
   currentView = child_process.spawn("sudo", [
-    `./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`,
+    "./bash/utils/led-image-viewer",
+    `./bash/utils/testmedia/${location}`,
+    "--led-cols=64",
+    "--led-rows=64",
   ]);
   currentViewPID = currentView.pid;
   console.log("CurrentViewPID after execute: ", currentView);
