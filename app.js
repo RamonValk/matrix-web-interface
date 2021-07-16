@@ -7,16 +7,18 @@ let currentView;
 let currentViewPID;
 
 const execView = (location) => {
-  console.dir(currentView, currentViewPID);
+  console.log("CurrentViewPID before execute: ", currentViewPID);
   if (currentViewPID) {
-    shell.exec(`kill ${currentViewPID}`);
+    console.log("CurrentViewPID exists: ", currentViewPID);
+    const execKill = shell.exec(`kill ${currentViewPID}`);
+    console.log("execKill output: ", execKill);
   }
   currentView = shell.exec(
     `sudo ./bash/utils/led-image-viewer ./bash/utils/testmedia/${location} --led-cols=64 --led-rows=64`,
     { async: true }
   );
   currentViewPID = currentView.pid;
-  console.log("CurrentViewPID: ", currentView.pid);
+  console.log("CurrentViewPID after execute: ", currentViewPID);
 };
 
 app.set("views", path.join(__dirname, "src/views"));
