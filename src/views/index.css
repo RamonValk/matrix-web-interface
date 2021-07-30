@@ -43,7 +43,13 @@ label {
 
 img {
   cursor: pointer;
-  width: 120px;
+  width: 100px;
+}
+
+@media (min-width: 700px) {
+  img {
+    width: 200px;
+  }
 }
 
 @media (min-width: 700px) {
