@@ -48,20 +48,20 @@ label {
   display: flex;
 }
 
-img {
+label > img {
   image-rendering: pixelated;
   cursor: pointer;
   width: 140px;
 }
 
 @media (min-width: 500px) {
-  img {
+  label > img {
     width: 160px;
   }
 }
 
 @media (min-width: 700px) {
-  img {
+  label > img {
     width: 200px;
   }
 }
