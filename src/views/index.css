@@ -16,6 +16,7 @@ h1 {
   color: white;
   font-family: "VT323", monospace;
   text-transform: uppercase;
+  margin-top: 40px;
 }
 
 form {
