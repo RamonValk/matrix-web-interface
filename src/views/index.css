@@ -75,3 +75,8 @@ label > img {
   align-items: center;
   font-family: "Source Code Pro", monospace;
 }
+
+.footer p > img {
+  width: 16px;
+  height: 16px;
+}
