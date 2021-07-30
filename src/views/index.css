@@ -45,12 +45,12 @@ label {
 img {
   image-rendering: pixelated;
   cursor: pointer;
-  width: 100px;
+  width: 140px;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 500px) {
   img {
-    width: 200px;
+    width: 160px;
   }
 }
 
