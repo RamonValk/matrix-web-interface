@@ -76,6 +76,9 @@ app.post("/", (req, res) => {
     case "art":
       execView("weird/art.gif");
       break;
+    case "art":
+      execView("geek/vapor.gif");
+      break;
     default:
       console.dir("No such mediaType");
   }
