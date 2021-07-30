@@ -84,3 +84,7 @@ label > img {
   height: 18px;
   padding: 0 5px;
 }
+
+.footer p > a {
+  color: white;
+}
