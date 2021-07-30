@@ -48,22 +48,31 @@ app.post("/", (req, res) => {
       break;
     case "bb8":
       execView("geek/bb8.gif");
+      break;
     case "bird":
       execView("zen/bird.gif");
+      break;
     case "city":
       execView("zen/city.gif");
+      break;
     case "city-cat":
       execView("zen/city-cat.gif");
+      break;
     case "fish":
       execView("zen/fish.gif");
+      break;
     case "train-cat":
       execView("zen/train-cat.gif");
+      break;
     case "avengers":
       execView("geek/avengers.gif");
+      break;
     case "musk":
       execView("geek/musk.gif");
+      break;
     case "dogue":
       execView("geek/dogue.gif");
+      break;
     case "art":
       execView("weird/art.gif");
       break;
