@@ -71,4 +71,6 @@ label > img {
 
 .footer p {
   color: white;
+  display: flex;
+  align-items: center;
 }
