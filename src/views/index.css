@@ -67,6 +67,9 @@ label > img {
 }
 
 .footer {
+  position: absolute;
+  bottom: 10px;
+  padding-top: 40px;
 }
 
 .footer p {
@@ -79,4 +82,5 @@ label > img {
 .footer p > img {
   width: 18px;
   height: 18px;
+  padding: 0 5px;
 }
