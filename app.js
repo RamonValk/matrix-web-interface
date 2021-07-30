@@ -76,7 +76,7 @@ app.post("/", (req, res) => {
     case "art":
       execView("weird/art.gif");
       break;
-    case "art":
+    case "vapor":
       execView("geek/vapor.gif");
       break;
     default:
