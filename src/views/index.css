@@ -23,7 +23,7 @@ form {
   width: 100%;
 }
 
-div {
+.content {
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -64,4 +64,11 @@ label > img {
   label > img {
     width: 200px;
   }
+}
+
+.footer {
+}
+
+.footer p {
+  color: white;
 }
