@@ -48,6 +48,24 @@ app.post("/", (req, res) => {
       break;
     case "bb8":
       execView("geek/bb8.gif");
+    case "bird":
+      execView("zen/bird.gif");
+    case "city":
+      execView("zen/city.gif");
+    case "city-cat":
+      execView("zen/city-cat.gif");
+    case "fish":
+      execView("zen/fish.gif");
+    case "train-cat":
+      execView("zen/train-cat.gif");
+    case "avengers":
+      execView("geek/avengers.gif");
+    case "musk":
+      execView("geek/musk.gif");
+    case "dogue":
+      execView("geek/dogue.gif");
+    case "art":
+      execView("weird/art.gif");
       break;
     default:
       console.dir("No such mediaType");
