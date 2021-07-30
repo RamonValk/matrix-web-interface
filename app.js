@@ -16,7 +16,7 @@ const execView = (location) => {
     "sudo",
     [
       "./bash/utils/led-image-viewer",
-      `./bash/utils/testmedia/${location}`,
+      `./${location}`,
       "--led-cols=64",
       "--led-rows=64",
       "--led-show-refresh",
