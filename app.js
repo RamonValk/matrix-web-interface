@@ -30,6 +30,7 @@ const execView = (location) => {
 app.set("views", path.join(__dirname, "src/views"));
 app.set("view engine", "pug");
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("media"));
 
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
