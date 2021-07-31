@@ -27,6 +27,13 @@ const execView = (location) => {
   console.log("CurrentViewPID after execute: ", currentViewPID);
 };
 
+const exitView = () => {
+  if (currentViewPID) {
+    console.log(`CurrentViewPID exists: ${currentViewPID}\nRemoving...`);
+    process.kill(-currentViewPID);
+  }
+};
+
 app.set("views", path.join(__dirname, "src/views"));
 app.set("view engine", "pug");
 app.use(express.urlencoded({ extended: true }));
